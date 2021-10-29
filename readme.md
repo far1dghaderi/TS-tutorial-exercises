@@ -4,3 +4,5 @@ Course link:
 https://www.udemy.com/course/typescript-the-complete-developers-guide/
 
 Projects:
+
+1- Google maps
