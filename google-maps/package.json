@@ -1,0 +1,17 @@
+{
+  "devDependencies": {
+    "typescript": "^4.4.4"
+  },
+  "scripts": {
+    "start:built": "tsc -w",
+    "start:run": "nodemon sorting-algorithm/src/index.ts",
+    "start": "concurrently npm:start:*"
+  },
+  "dependencies": {
+    "@types/faker": "^5.5.9",
+    "@types/googlemaps": "^3.43.3",
+    "concurrently": "^6.3.0",
+    "faker": "^5.5.3",
+    "nodemon": "^2.0.14"
+  }
+}
