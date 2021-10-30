@@ -1,39 +1,26 @@
 "use strict";
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        if (typeof b !== "function" && b !== null)
-            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.MatchReader = void 0;
 var utils_1 = require("../utils");
-var CsvFileReader_1 = require("./CsvFileReader");
-var MatchReader = /** @class */ (function (_super) {
-    __extends(MatchReader, _super);
-    function MatchReader() {
-        return _super !== null && _super.apply(this, arguments) || this;
+var MatchReader = /** @class */ (function () {
+    function MatchReader(reader) {
+        this.reader = reader;
+        this.matches = [];
     }
-    MatchReader.prototype.mapRow = function (match) {
-        return [
-            (0, utils_1.stringDateToDate)(match[0]),
-            match[1],
-            match[2],
-            parseInt(match[3]),
-            parseInt(match[4]),
-            match[5],
-            match[6],
-        ];
+    MatchReader.prototype.load = function () {
+        this.reader.read();
+        this.matches = this.reader.data.map(function (match) {
+            return [
+                (0, utils_1.stringDateToDate)(match[0]),
+                match[1],
+                match[2],
+                parseInt(match[3]),
+                parseInt(match[4]),
+                match[5],
+                match[6],
+            ];
+        });
     };
     return MatchReader;
-}(CsvFileReader_1.CsvFileReader));
+}());
 exports.MatchReader = MatchReader;

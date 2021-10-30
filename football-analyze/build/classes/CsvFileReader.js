@@ -10,7 +10,7 @@ var CsvFileReader = /** @class */ (function () {
         this.filePath = filePath;
         this.data = [];
     }
-    CsvFileReader.prototype.readCsv = function () {
+    CsvFileReader.prototype.read = function () {
         this.data = fs_1.default
             .readFileSync(this.filePath, {
             encoding: "utf-8",
