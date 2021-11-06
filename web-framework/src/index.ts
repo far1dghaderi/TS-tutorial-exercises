@@ -10,10 +10,12 @@ const users = new Collection(
 );
 
 users.on("change", () => {
-  const root = document.querySelector("#root");
+  const root = document.getElementById("root");
   if (root) {
+    console.log(users);
     new UserList(root, users).render();
   }
 });
 
 users.fetch();
+console.log("hey");

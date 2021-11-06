@@ -2213,7 +2213,7 @@ module.exports.default = axios;
 
 },{"./utils":"node_modules/axios/lib/utils.js","./helpers/bind":"node_modules/axios/lib/helpers/bind.js","./core/Axios":"node_modules/axios/lib/core/Axios.js","./core/mergeConfig":"node_modules/axios/lib/core/mergeConfig.js","./defaults":"node_modules/axios/lib/defaults.js","./cancel/Cancel":"node_modules/axios/lib/cancel/Cancel.js","./cancel/CancelToken":"node_modules/axios/lib/cancel/CancelToken.js","./cancel/isCancel":"node_modules/axios/lib/cancel/isCancel.js","./env/data":"node_modules/axios/lib/env/data.js","./helpers/spread":"node_modules/axios/lib/helpers/spread.js","./helpers/isAxiosError":"node_modules/axios/lib/helpers/isAxiosError.js"}],"node_modules/axios/index.js":[function(require,module,exports) {
 module.exports = require('./lib/axios');
-},{"./lib/axios":"node_modules/axios/lib/axios.js"}],"src/models/Eventing.ts":[function(require,module,exports) {
+},{"./lib/axios":"node_modules/axios/lib/axios.js"}],"build/models/Eventing.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2248,7 +2248,7 @@ function () {
 }();
 
 exports.Eventing = Eventing;
-},{}],"src/models/Collection.ts":[function(require,module,exports) {
+},{}],"build/models/Collection.js":[function(require,module,exports) {
 "use strict";
 
 var __importDefault = this && this.__importDefault || function (mod) {
@@ -2309,7 +2309,7 @@ function () {
 }();
 
 exports.Collection = Collection;
-},{"axios":"node_modules/axios/index.js","./Eventing":"src/models/Eventing.ts"}],"src/models/Model.ts":[function(require,module,exports) {
+},{"axios":"node_modules/axios/index.js","./Eventing":"build/models/Eventing.js"}],"build/models/Model.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2379,7 +2379,7 @@ function () {
 }();
 
 exports.Model = Model;
-},{}],"src/ApiSync.ts":[function(require,module,exports) {
+},{}],"build/ApiSync.js":[function(require,module,exports) {
 "use strict";
 
 var __importDefault = this && this.__importDefault || function (mod) {
@@ -2421,7 +2421,7 @@ function () {
 }();
 
 exports.ApiSync = ApiSync;
-},{"axios":"node_modules/axios/index.js"}],"src/models/Attributes.ts":[function(require,module,exports) {
+},{"axios":"node_modules/axios/index.js"}],"build/models/Attributes.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2456,7 +2456,7 @@ function () {
 }();
 
 exports.Attributes = Attributes;
-},{}],"src/models/User.ts":[function(require,module,exports) {
+},{}],"build/models/User.js":[function(require,module,exports) {
 "use strict";
 
 var __extends = this && this.__extends || function () {
@@ -2534,7 +2534,7 @@ function (_super) {
 }(Model_1.Model);
 
 exports.User = User;
-},{"./Model":"src/models/Model.ts","../ApiSync":"src/ApiSync.ts","./Attributes":"src/models/Attributes.ts","./Eventing":"src/models/Eventing.ts","./Collection":"src/models/Collection.ts"}],"src/views/CollectionView.ts":[function(require,module,exports) {
+},{"./Model":"build/models/Model.js","../ApiSync":"build/ApiSync.js","./Attributes":"build/models/Attributes.js","./Eventing":"build/models/Eventing.js","./Collection":"build/models/Collection.js"}],"build/views/CollectionView.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2568,7 +2568,7 @@ function () {
 }();
 
 exports.CollectionView = CollectionView;
-},{}],"src/views/View.ts":[function(require,module,exports) {
+},{}],"build/views/View.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2651,7 +2651,7 @@ function () {
 }();
 
 exports.View = View;
-},{}],"src/views/UserShow.ts":[function(require,module,exports) {
+},{}],"build/views/UserShow.js":[function(require,module,exports) {
 "use strict";
 
 var __extends = this && this.__extends || function () {
@@ -2706,7 +2706,7 @@ function (_super) {
 }(View_1.View);
 
 exports.UserShow = UserShow;
-},{"./View":"src/views/View.ts"}],"src/views/UserList.ts":[function(require,module,exports) {
+},{"./View":"build/views/View.js"}],"build/views/UserList.js":[function(require,module,exports) {
 "use strict";
 
 var __extends = this && this.__extends || function () {
@@ -2763,7 +2763,7 @@ function (_super) {
 }(CollectionView_1.CollectionView);
 
 exports.UserList = UserList;
-},{"./CollectionView":"src/views/CollectionView.ts","./UserShow":"src/views/UserShow.ts"}],"src/index.ts":[function(require,module,exports) {
+},{"./CollectionView":"build/views/CollectionView.js","./UserShow":"build/views/UserShow.js"}],"build/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2783,13 +2783,12 @@ users.on("change", function () {
   var root = document.getElementById("root");
 
   if (root) {
-    console.log(users);
     new UserList_1.UserList(root, users).render();
   }
 });
 users.fetch();
 console.log("hey");
-},{"./models/Collection":"src/models/Collection.ts","./models/User":"src/models/User.ts","./views/UserList":"src/views/UserList.ts"}],"C:/Users/Farid GH/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./models/Collection":"build/models/Collection.js","./models/User":"build/models/User.js","./views/UserList":"build/views/UserList.js"}],"C:/Users/Farid GH/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -2817,7 +2816,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "6166" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "8180" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -2993,5 +2992,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["C:/Users/Farid GH/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","src/index.ts"], null)
-//# sourceMappingURL=/src.f10117fe.js.map
+},{}]},{},["C:/Users/Farid GH/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","build/index.js"], null)
+//# sourceMappingURL=/build.06da9ca9.js.map
