@@ -1,11 +1,13 @@
 import express from "express";
-import { router } from "./routes/loginRoutes";
 import cookieSession from "cookie-session";
+import { AppRouter } from "./AppRouter";
+import "./controllers/LoginController";
+import "./controllers/RootController";
 
 const app = express();
+
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieSession({ keys: ["afsdsa"] }));
-
-app.use(router);
+app.use(AppRouter.router);
 
 app.listen(3000);
