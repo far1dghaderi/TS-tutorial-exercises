@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const decorators_1 = require("./decorators");
+var decorators_1 = require("./decorators");
 function protect(req, res, next) {
     if (req.session && req.session.loggedIn) {
         next();
@@ -19,40 +19,35 @@ function protect(req, res, next) {
         res.status(403).send("access denied");
     }
 }
-let RootController = class RootController {
-    getRoot(req, res) {
+var RootController = /** @class */ (function () {
+    function RootController() {
+    }
+    RootController.prototype.getRoot = function (req, res) {
         if (req.session && req.session.loggedIn) {
-            res.send(`
-                  <h4> you are logged in </h4>
-                  <br />
-                  <a href="/logout" > loggout</a>
-          `);
+            res.send("\n                  <h4> you are logged in </h4>\n                  <br />\n                  <a href=\"/logout\" > loggout</a>\n          ");
         }
         else {
-            res.send(`
-              <h4> you are not logged in </h4>
-              <br />
-              <a href="/login">login </a>
-          `);
+            res.send("\n              <h4> you are not logged in </h4>\n              <br />\n              <a href=\"/login\">login </a>\n          ");
         }
-    }
-    getProtected(req, res) {
+    };
+    RootController.prototype.getProtected = function (req, res) {
         res.send("welcome to protected");
-    }
-};
-__decorate([
-    (0, decorators_1.get)("/"),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object, Object]),
-    __metadata("design:returntype", void 0)
-], RootController.prototype, "getRoot", null);
-__decorate([
-    (0, decorators_1.get)("/protected"),
-    (0, decorators_1.use)(protect),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object, Object]),
-    __metadata("design:returntype", void 0)
-], RootController.prototype, "getProtected", null);
-RootController = __decorate([
-    (0, decorators_1.controller)("")
-], RootController);
+    };
+    __decorate([
+        (0, decorators_1.get)("/"),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", [Object, Object]),
+        __metadata("design:returntype", void 0)
+    ], RootController.prototype, "getRoot", null);
+    __decorate([
+        (0, decorators_1.get)("/protected"),
+        (0, decorators_1.use)(protect),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", [Object, Object]),
+        __metadata("design:returntype", void 0)
+    ], RootController.prototype, "getProtected", null);
+    RootController = __decorate([
+        (0, decorators_1.controller)("")
+    ], RootController);
+    return RootController;
+}());

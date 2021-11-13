@@ -2,8 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.del = exports.put = exports.patch = exports.post = exports.get = void 0;
 require("reflect-metadata");
-const Methods_1 = require("../../Methods");
-const MetadataKeys_1 = require("./MetadataKeys");
+var Methods_1 = require("../../Methods");
+var MetadataKeys_1 = require("./MetadataKeys");
 function routeBinder(method) {
     return function (path) {
         return function (target, key, desc) {
